@@ -21,6 +21,7 @@
         "vite": "^6.2.0"
     },
     "dependencies": {
+        "carbon-components-svelte": "^0.88.4",
         "gh-pages": "^6.3.0"
     }
 }

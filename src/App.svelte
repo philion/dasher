@@ -2,6 +2,19 @@
   import svelteLogo from './assets/svelte.svg'
   import viteLogo from '/vite.svg'
   import Counter from './lib/Counter.svelte'
+
+  import "carbon-components-svelte/css/all.css";
+  //let theme = "white"; // "white" | "g10" | "g80" | "g90" | "g100"
+  let theme = "g90";
+  $: document.documentElement.setAttribute("theme", theme);
+
+  import { Button, breakpoints } from "carbon-components-svelte";
+
+  import {
+    Theme,
+    RadioButtonGroup,
+    RadioButton,
+  } from "carbon-components-svelte";
 </script>
 
 <main>
@@ -26,6 +39,14 @@
   <p class="read-the-docs">
     Click on the Vite and Svelte logos to learn more
   </p>
+
+  <Theme bind:theme persist persistKey="__carbon-theme" />
+
+  <RadioButtonGroup legendText="Carbon theme" bind:selected={theme}>
+    {#each ["white", "g10", "g80", "g90", "g100"] as value}
+      <RadioButton labelText={value} {value} />
+    {/each}
+  </RadioButtonGroup>
 </main>
 
 <style>
