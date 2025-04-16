@@ -9,6 +9,7 @@
   $: document.documentElement.setAttribute("theme", theme);
 
   import { Button, breakpoints } from "carbon-components-svelte";
+  import { Breadcrumb, BreadcrumbItem } from "carbon-components-svelte";
 
   import {
     Theme,
